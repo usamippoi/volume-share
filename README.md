@@ -1,3 +1,14 @@
+# 構成
+```txt
+.
+├── docker-compose.yml
+├── nginx
+│   └── Dockerfile
+└── php-fpm
+    ├── Dockerfile
+    └── src.txt
+```
+
 # ソース共有を確かめる
 ```sh
 finch compose up -d --build
