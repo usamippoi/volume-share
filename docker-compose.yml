@@ -1,17 +1,17 @@
 version: "3"
 services:
-  php-fpm:
+  container1:
     build:
-      context: ./php-fpm
+      context: ./container1
     volumes:
       - code_share:/var/www/public
-  nginx:
+  container2:
     build:
-      context: ./nginx
+      context: ./container2
     volumes:
       - code_share:/var/www/public
     depends_on:
-      - php-fpm
+      - container1
 
 volumes:
   code_share:
