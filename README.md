@@ -2,11 +2,11 @@
 ```txt
 .
 ├── docker-compose.yml
-├── nginx
-│   └── Dockerfile
-└── php-fpm
+└── container1
     ├── Dockerfile
     └── src.txt
+├── container2
+│   └── Dockerfile
 ```
 
 # ソース共有を確かめる
@@ -15,8 +15,8 @@ finch compose up -d --build
 finch compose logs
 ```
 ```txt
-php-fpm_1 |src ver 1.0
-nginx_1   |src ver 1.0
+container1_1 |src ver 1.0
+container2_1 |src ver 1.0
 ```
 
 # ソースを更新してみる
@@ -32,8 +32,8 @@ docker-compose up -d --build
 docker-compose logs
 ```
 ```txt
-php-fpm_1 |src ver 1.0
-nginx_1   |src ver 1.0
+container1_1 |src ver 1.0
+container2_1 |src ver 1.0
 ```
 
 # volumeを削除して作り直すと更新される
@@ -44,8 +44,8 @@ docker-compose up -d --build
 docker-compose logs
 ```
 ```txt
-php-fpm_1 |src ver 1.1
-nginx_1   |src ver 1.1
+container1_1 |src ver 1.1
+container2_1 |src ver 1.1
 ```
 
 # 参考サイト
